@@ -10,18 +10,18 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 <title><h:outputText value="#{msg.titulo}" /></title>
 <script name="jquery/jquery.js" library="primefaces"></script>
 </h:head>
-    <h:body>
+    <h:body styleClass="mainbody">
         <h:form>
-            <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English" image="en.png" />
+            <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English" image="en.png" styleClass="roundButton"/>
             <h:outputText value=" "/>
-            <h:commandButton action="#{matriculaBean.changeLanguage('es')}" value ="Español" image ="es.png" />
+            <h:commandButton action="#{matriculaBean.changeLanguage('es')}" value ="Español" image ="es.png" styleClass="roundButton"/>
         </h:form>
         <h:form prependId="false" >
             <h1>
                 <h:outputText value ="#{msg.datosMatricula}" />
             </h1>
-            <h:panelGrid columns="3">
-                <p:outputLabel value ="#{msg.documento}" for="documento"/>
+            <h:panelGrid columns="3" styleClass="center">
+                <p:outputLabel value ="#{msg.documento}" for="documento" />
                 <p:inputText id="documento" value="#{matriculaBean.documento}" label="#{msg.documento}" required ="true">
                     <f:attribute name ="requiredMessageDocumento" value ="#{msg.documentoRequerido}"/>
                 </p:inputText>
@@ -46,13 +46,14 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
                 <p:message for="semestre" styleClass="errormsg" />
             </h:panelGrid>   
             <br/>
-            <h2>Primefaces - Captcha</h2>
             <p:messages id="msg"></p:messages>
+            <h:panelGrid styleClass="center">
             <p:captcha id="captcha"></p:captcha>
+            </h:panelGrid>
             <br/>
-            <p:commandButton value="Check" actionListener="#{captcha.check}" ajax="false"/>
-            <p:commandButton id="x" value="Submit" actionListener="#{matriculaBean.guardarMatricula()}" disabled ="#{matriculaBean.disable}" action="submit" update="@form:x" />
-            <h:commandButton  id="botonValidarMatricula"  binding="#{matriculaBean.botonValidarMatricula}" value="validar" actionListener="#{matriculaBean.validarCreditos()}"  />
+            <p:commandButton value="Check" actionListener="#{captcha.check}" ajax="false" styleClass="boton"/>
+            <p:commandButton id="x" value="Submit" actionListener="#{matriculaBean.guardarMatricula()}" disabled ="#{matriculaBean.disable}" action="submit" update="@form:x" styleClass="boton"/>
+            <h:commandButton  id="botonValidarMatricula"  binding="#{matriculaBean.botonValidarMatricula}" value="validar" actionListener="#{matriculaBean.validarCreditos()}" styleClass="boton" />
             <h:message for="botonValidarMatricula" />
 
         </h:form>

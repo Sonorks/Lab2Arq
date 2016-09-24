@@ -8,12 +8,12 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <title><h:outputText value="#{msg.titulo}" /></title>
  </h:head>
-    <h:body>
+    <h:body styleClass="mainbody">
   <h:form>
         <h1>
             <h:outputText value="#{msg.datosMatricula}" />
         </h1>
-        <h:panelGrid columns="2">
+        <h:panelGrid columns="2" styleClass="center">
             
             <h:outputText value="#{msg.documento}" />
             <h:outputText value="#{matriculaBean.documento}">
@@ -34,7 +34,7 @@
         </p:column>
             
         </h:panelGrid>
-        <h:commandButton value="Back" action="back" />
+        <h:commandButton value="Back" action="back" styleClass="boton" />
     </h:form>
  </h:body>
 </html>

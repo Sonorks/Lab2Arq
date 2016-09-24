@@ -11,3 +11,37 @@ and open the template in the editor.
 .msgerror{
     color:red
 }
+
+.center{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.roundButton{
+    border-radius: 30px;
+    padding: 20px; 
+    width: 40px;
+    height: 35px; 
+}
+
+.mainbody{
+    background-image: url(../fondo.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-color:black;
+    text-align: center;
+    align-content: center;
+}
+
+.boton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
