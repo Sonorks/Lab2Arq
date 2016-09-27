@@ -27,6 +27,7 @@ import javax.faces.context.FacesContext;
 public class MatriculaBean implements Serializable {
     @EJB 
     private MatriculaFacadeLocal matriculaFacade;
+    @EJB
     private EstudianteFacadeLocal estudianteFacade;
     private UIComponent botonValidarMatricula;
     private UIComponent botonValidarEstudiante;
@@ -65,7 +66,13 @@ public class MatriculaBean implements Serializable {
     public void setMatriculaFacade(MatriculaFacadeLocal matriculaFacade) {
         this.matriculaFacade = matriculaFacade;
     }
+    public EstudianteFacadeLocal getEstudianteFacade() {
+        return estudianteFacade;
+    }
 
+    public void setEstudianteFacade(EstudianteFacadeLocal estudianteFacade) {
+        this.estudianteFacade = estudianteFacade;
+    }
     public boolean isDisableMatricula() {
         return disableMatricula;
     }
@@ -136,7 +143,6 @@ public class MatriculaBean implements Serializable {
         es.setEstudiantePK(esPK);
         es.setNivel(nivel);
         es.setPrograma(programa);
-        System.out.println(":"+documento+tipoDocumento+nivel+programa);
         this.estudianteFacade.create(es);
         return "Estudiante guardado";
     }
@@ -211,11 +217,5 @@ public class MatriculaBean implements Serializable {
         FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale(language));
     }
 
-    public EstudianteFacadeLocal getEstudianteFacade() {
-        return estudianteFacade;
-    }
-
-    public void setEstudianteFacade(EstudianteFacadeLocal estudianteFacade) {
-        this.estudianteFacade = estudianteFacade;
-    }
+    
 }
