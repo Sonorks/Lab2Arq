@@ -51,8 +51,7 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
             <p:captcha id="captcha"></p:captcha>
             </h:panelGrid>
             <br/>
-            <p:commandButton value="Check" actionListener="#{captcha.check}" ajax="false" styleClass="boton"/>
-            <p:commandButton id="x" value="Submit" actionListener="#{matriculaBean.guardarMatricula()}" disabled ="#{matriculaBean.disable}" action="submit" update="@form:x" styleClass="boton"/>
+            <p:commandButton id="x" value="Submit" actionListener="#{matriculaBean.guardarMatricula()}" disabled ="#{matriculaBean.disableMatricula}" action="submit" update="@form:x" styleClass="boton"/>
             <h:commandButton  id="botonValidarMatricula"  binding="#{matriculaBean.botonValidarMatricula}" value="validar" actionListener="#{matriculaBean.validarCreditos()}" styleClass="boton" />
             <h:message for="botonValidarMatricula" />
 

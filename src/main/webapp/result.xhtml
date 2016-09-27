@@ -30,7 +30,7 @@
             <h:outputText value="#{matriculaBean.semestre}" />
             
         <p:column headerText="QR Code">    
-            <p:barcode value="#{matriculaBean.documento} #{matriculaBean.creditos} #{matriculaBean.semestre}" type="qr" format="png" width="200px"/> 
+            <p:barcode value="Documento: #{matriculaBean.documento} Creditos: #{matriculaBean.creditos} Matricula: #{matriculaBean.semestre}" type="qr" format="png" width="200px"/> 
         </p:column>
             
         </h:panelGrid>
